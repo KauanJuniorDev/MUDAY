@@ -1,7 +1,5 @@
 Escopo do Projeto:
 	login (prioridade 3)
-	botão de mais opções (botão) (prioridade 3)
-	sobre nós (cabeçario) (prioridade 2)
 	configurações (botão) (prioridade 3)
 	caixa de frases motivacionais (opção) (prioridade 2)
 	responsividade (prioridade 3)
