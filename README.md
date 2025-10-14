@@ -1,4 +1,4 @@
-escopo do projeto:
+Escopo do Projeto:
 	login (prioridade 3)
 	botão de mais opções (botão) (prioridade 3)
 	sobre nós (cabeçario) (prioridade 2)
