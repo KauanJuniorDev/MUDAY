@@ -4,20 +4,21 @@
     <script></script>
     <meta charset="UTF-8">
     <title>MUDAY</title>
+    <link rel="shortcut icon" href="img/caneta-calendario.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/globals.css">
 	<link href="login/login.html"></link>
   </head>
  <body>
 
-  <div class="navbar">
+  <div class="navbar show-menu">
     <div class="header-inner-content">
 
       <h1 class="logo">MU<span>DAY</span></h1>
       <nav>
         <ul>
           <li>Home</li>
-          <li>Caixa</li>
-          <li>Perfil</li>
+          <li> <a href="caixa.html">Caixa</a></li>
+          <li> <a href="conta.html">Conta</a></li>
         </ul>
       </nav>
       <div class="nav-icon-container"><img src="img/menu.png " class="menu-button"></div>
@@ -36,6 +37,17 @@
     <button class="sim" tabindex="1"><a src="login/login.html">Sim</a></button> 
 	  <button class="nao" tabindex="-1">Não</button>
     </div>
+
+    <script>
+
+      const navbar = document.querySelector('.navbar');
+      const menuButton = document.querySelector('.menu-button');
+
+      menuButton.addEventListener('click', () => {
+        navbar.classList.toggle('show-menu');
+      });
+
+    </script>
  </body>
 </html>
 
