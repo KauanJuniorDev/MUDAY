@@ -1,10 +1,10 @@
-<html>  
+<html lang="pt-BR">  
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MUDAY</title>
     <link rel="shortcut icon" href="img/caneta-calendario.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/globals.css">
-    <link href="login/login.html"></link>
   </head>
   <body>
  
@@ -12,40 +12,44 @@
     <div class="header-inner-content">
  
       <h1 class="logo">MU<span>DAY</span></h1>
+
       <nav>
         <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="login/login.html">login</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login/login.html">Login</a></li>
           <li><a href="caixa.html">Caixa</a></li>
           <li><a href="conta.html">Conta</a></li>  
         </ul>
       </nav>
-      <div class="nav-icon-container"><img src="img/menu.png " class="menu-button"></div>
+
+      <div class="nav-icon-container">
+        <img src="img/menu.png" class="menu-button" alt="menu">
+      </div>
  
     </div>
   </div>
  
-    <h2> Bem vindo(a) ao Muday!</h2>
+    <h2>Bem vindo(a) ao Muday!</h2>
  
     <div class="container">
-     <img src="img/pngtree-womans-face-depicted-in-vector-cartoon-style-with-speech-bubble-and-handdrawn-doodle-line-accents-vector-png-image_45699498.jpg" class="mulher">
+     <img src="img/pngtree-womans-face-depicted-in-vector-cartoon-style-with-speech-bubble-and-handdrawn-doodle-line-accents-vector-png-image_45699498.jpg" class="mulher" alt="mulher">
      <p>Olá "Nome",<br>mais um dia?</p>
     </div>
    
-    <div class="resposta">
-    <button class="sim" tabindex="1"><a src="login/login.html">Sim</a></button>
-    <button class="nao" tabindex="-1">Não</button>
+    <div class="resposta" role="group" aria-label="Resposta">
+      <a href="login/login.html" class="sim button" role="button" tabindex="1">Sim</a>
+      <button class="nao" type="button" tabindex="2">Não</button>
     </div>
  
     <script>
- 
       const navbar = document.querySelector('.navbar');
       const menuButton = document.querySelector('.menu-button');
- 
-      menuButton.addEventListener('click', () => {
-        navbar.classList.toggle('show-menu');
-      });
- 
+
+      if (menuButton && navbar) {
+        menuButton.addEventListener('click', () => {
+          navbar.classList.toggle('show-menu');
+        });
+      }
     </script>
  </body>
 </html>

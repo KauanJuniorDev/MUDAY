@@ -4,7 +4,11 @@
     margin: 0;
 }
 body{
-    font-family: Arial;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    margin-left: auto;
 }
 
 .navbar{
@@ -12,7 +16,7 @@ body{
     padding: 1rem;
     position: sticky;
     top: 0;
-    box-shadow: 1px 0px 10px;
+    box-shadow: 1px 0px 10px rgba(0,0,0,0.2);
     z-index: 100;
 }
 
@@ -23,8 +27,10 @@ nav ul li a{
 
 .header-inner-content{
     max-width: 1800px;
-    margin-left: auto
-    margin-right auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
 }
 
 .navbar>div{
@@ -70,7 +76,7 @@ nav ul li{
 }
 
 nav ul li:hover{
-    transform: translatey(-5px);
+    transform: translateY(-5px);
     transition: 0.2s;
     font-weight: bold;
 }
@@ -113,15 +119,22 @@ h2{
     right: 47%;
     font-size: 20px;
     top: 80%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-button{
+button, .button{
     padding: 20px 35px;
     border-radius: 30px;
-    border: black solid 2px;
+    border: 2px solid black;
     cursor: pointer;
     font-size: 15px;
     font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+    background: none;
 }
 
 .sim{
@@ -135,7 +148,7 @@ button{
     margin-left: 10px;
 }
 
-button:hover{
+button:hover, .button:hover{
     transform: translateY(-5px);
     transition: 0.3s;
     font-weight: bold;
@@ -170,4 +183,8 @@ button:hover{
         gap: 1rem;
         padding: 1rem 0;
     }
+
+    /* Ajustes para evitar sobreposição em telas pequenas */
+    .container { width: 90%; }
+    .resposta { position: static; text-align: center; margin: 1.5rem 0; }
 }
