@@ -6,52 +6,54 @@
     <link rel="shortcut icon" href="img/caneta-calendario.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/globals.css">
   </head>
+
   <body>
+    <div class="navbar show-menu">
+      <div class="header-inner-content">
  
-  <div class="navbar show-menu">
-    <div class="header-inner-content">
- 
-      <h1 class="logo">MU<span>DAY</span></h1>
+        <h1 class="logo">MU<span>DAY</span></h1>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="login/login.html">Login</a></li>
-          <li><a href="caixa.html">Caixa</a></li>
-          <li><a href="conta.html">Conta</a></li>  
-        </ul>
-      </nav>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login/login.html">Login</a></li>
+            <li><a href="caixa.html">Caixa</a></li>
+            <li><a href="conta.html">Conta</a></li>  
+          </ul>
+        </nav>
 
-      <div class="nav-icon-container">
-        <img src="img/menu.png" class="menu-button" alt="menu">
+        <div class="nav-icon-container">
+          <img src="img/menu.png" class="menu-button" alt="menu">
+        </div>
+
       </div>
- 
+
     </div>
-  </div>
  
     <h2>Bem vindo(a) ao Muday!</h2>
  
     <div class="container">
-     <img src="img/pngtree-womans-face-depicted-in-vector-cartoon-style-with-speech-bubble-and-handdrawn-doodle-line-accents-vector-png-image_45699498.jpg" class="mulher" alt="mulher">
-     <p>Olá "Nome",<br>mais um dia?</p>
-    </div>
+      <img src="img/pngtree-womans-face-depicted-in-vector-cartoon-style-with-speech-bubble-and-handdrawn-doodle-line-accents-vector-png-image_45699498.jpg" class="mulher" alt="mulher">
+      <p>Olá "Nome",<br>mais um dia?</p>
+    
    
-    <div class="resposta" role="group" aria-label="Resposta">
-      <a href="login/login.html" class="sim button" role="button" tabindex="1">Sim</a>
-      <button class="nao" type="button" tabindex="2">Não</button>
-    </div>
+      <div class="resposta" role="group" aria-label="Resposta">
+        <button class="sim" type="button" tabindex="1"><a href="login/login.html" class="sim" role="button" tabindex="1">Sim</a></button>
+        <button class="nao" type="button" tabindex="2">Não</button>
+      </div>
  
-    <script>
-      const navbar = document.querySelector('.navbar');
-      const menuButton = document.querySelector('.menu-button');
+      <script>
+        const navbar = document.querySelector('.navbar');
+        const menuButton = document.querySelector('.menu-button');
 
-      if (menuButton && navbar) {
-        menuButton.addEventListener('click', () => {
+        if (menuButton && navbar) {
+          menuButton.addEventListener('click', () => {
           navbar.classList.toggle('show-menu');
-        });
-      }
-    </script>
- </body>
+          });
+        }
+      </script>
+    </div>
+  </body>
 </html>
 
 

@@ -26,11 +26,13 @@ nav ul li a{
 }
 
 .header-inner-content{
-    max-width: 1800px;
-    margin-left: auto;
-    margin-right: auto;
+    /*max-width: 1200px;*/
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .navbar>div{
@@ -92,6 +94,15 @@ h2{
     font-size: 35px;
 }
 
+.centralizar{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .container {
     position: relative;
     width: 520px;
@@ -118,13 +129,13 @@ h2{
     position: absolute;
     right: 47%;
     font-size: 20px;
-    top: 80%;
+    top: 90%;
     display: flex;
     gap: 0.5rem;
     align-items: center;
 }
 
-button, .button{
+button {
     padding: 20px 35px;
     border-radius: 30px;
     border: 2px solid black;
@@ -132,7 +143,7 @@ button, .button{
     font-size: 15px;
     font-weight: 600;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     color: inherit;
     background: none;
 }
@@ -142,13 +153,15 @@ button, .button{
     color: white;
     margin-right: 10px;
 }
+
 .nao{
     background-color: #d70000;
     color: white;
     margin-left: 10px;
 }
 
-button:hover, .button:hover{
+.button:hover{
+    text-decoration: underline;
     transform: translateY(-5px);
     transition: 0.3s;
     font-weight: bold;
