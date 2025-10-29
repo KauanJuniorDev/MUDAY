@@ -1,3 +1,28 @@
+<?php
+    if(isset($_POST['submit'])) {
+
+        //print_r($_POST['nome']);
+        //print_r(<br>);
+        //print_r($_POST['email']);
+        //print_(<br>)
+        //print_r($_POST['senha']);
+        //print_r(<br>)
+        //print_r($_POST['confSenha']);
+        
+        include_once('config.php');
+        
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $confSenha = $_POST['confSenha'];
+
+        $result = mysqli_query($conexao, "INSSERT INTO usuarios(nome, email, senha, confirmaSenha) VALUES ('$nome', '$email', '$senha', '$confSenha')");
+        
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,7 +55,7 @@
     </div>
 
     <div class="box">
-        <form action="">
+        <form action="cadastro.php" method="POST">
             <fieldset>
                 <legend><b>Cadastre-se</b></legend>
                 <br><br>
@@ -51,7 +76,7 @@
                 <br><br>
                 <div class="inputBox">
                     <input type="password" name="confirmaSenha" id="confirmaSenha" class="inputUser" required>
-                    <label for="confirmaSenha" class="labelInput">Confirme a senha:</label>
+                    <label for="confSenha" class="labelInput">Confirme a senha:</label>
                 </div>
                 <br><br>
                 <input type="submit" name="submit" id="submit">
