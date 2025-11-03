@@ -1,15 +1,61 @@
+<?php
+    if(isset($_POST['submit'])) {
+
+        //print_r($_POST['nome']);
+        //print_r(<br>);
+        //print_r($_POST['email']);
+        //print_(<br>)
+        //print_r($_POST['senha']);
+        //print_r(<br>)
+        //print_r($_POST['confSenha']);
+        
+        include_once('config.php');
+        
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $confSenha = $_POST['confSenha'];
+
+        $result = mysqli_query($conexao, "INSSERT INTO usuarios(nome, email, senha, confirmaSenha) VALUES ('$nome', '$email', '$senha', '$confSenha')");
+        
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../cadastro/cadastro.css">
+    <link rel="stylesheet" href="cadastro.css">
     <title>Cadastre-se</title>
 </head>
 <body>
+
+    <div class="navbar show-menu">
+        <div class="header-inner-content">
+ 
+            <h1 class="logo">MU<span>DAY</span></h1>
+
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/login/login.html">Login</a></li>  
+                </ul>
+            </nav>
+
+            <div class="nav-icon-container">
+                <img src="img/menu.png" class="menu-button" alt="menu">
+            </div>
+
+        </div>
+
+    </div>
+
     <div class="box">
-        <form action="">
+        <form action="cadastro.php" method="POST">
             <fieldset>
                 <legend><b>Cadastre-se</b></legend>
                 <br><br>
@@ -30,7 +76,7 @@
                 <br><br>
                 <div class="inputBox">
                     <input type="password" name="confirmaSenha" id="confirmaSenha" class="inputUser" required>
-                    <label for="confirmaSenha" class="labelInput">Confirme a senha:</label>
+                    <label for="confSenha" class="labelInput">Confirme a senha:</label>
                 </div>
                 <br><br>
                 <input type="submit" name="submit" id="submit">

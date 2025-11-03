@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
 
 * {
-    /*margin: 0
+    /*margin: 0;
     padding: 0;*/
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
@@ -11,6 +11,84 @@
 body {
     min-height: 100vh;
     background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+}
+
+nav {
+    margin-left: auto;
+}
+
+.navbar{
+    background-color: #2c2c2c;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 1px 0px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.header-inner-content{
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+span{
+    color: #0061d7;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img{
+    width: 24px;
+    height: 24px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+nav ul li{
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+nav ul li:hover{
+    transform: translateY(-5px);
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.menu-button{
+    display: none;
 }
 
 .box {
