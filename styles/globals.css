@@ -25,14 +25,6 @@ body{
     border:1px solid rgba(0, 247, 255, 0.568);
 }
 
-.circle:nth-child(1){
-    width: 400px;
-    height: 100px;
-    top: 400px;
-    left: 715px;
-    
-}
-
 .circle:nth-child(2){
     width: 100px;
     height: 100px;
@@ -258,6 +250,7 @@ button {
         gap: 1rem;
         padding: 1rem 0;
     }
+    
 
     /* Ajustes para evitar sobreposição em telas pequenas */
     .container { width: 90%; }
