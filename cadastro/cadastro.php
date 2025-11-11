@@ -16,7 +16,7 @@
         $senha = $_POST['senha'];
         $confSenha = $_POST['confSenha'];
 
-        $result = mysqli_query($conexao, "INSSERT INTO usuarios(nome, email, senha, confirmaSenha) VALUES ('$nome', '$email', '$senha', '$confSenha')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha, confirmaSenha) VALUES ('$nome', '$email', '$senha', '$confSenha')");
         
     }
 
