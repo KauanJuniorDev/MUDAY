@@ -1,5 +1,5 @@
 <?php
-\*
+/*
     if(isset($_POST['submit'])) {
 
         //print_r($_POST['nome']);
@@ -20,6 +20,42 @@
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha, confirmaSenha) VALUES ('$nome', '$email', '$senha', '$confSenha')");        
     }
 */
+
+if(isset($_POST['submit'])) {
+    include_once('config.php');
+
+    $nome = trim($_POST['nome']);
+    $email = trim($_POST['email']);
+    $senha = $_POST['senha'];
+    $confSenha = $_POST['confirmaSenha'];
+
+    if ($senha !== $confSenha) {
+        // tratar erro — senhas não conferem
+        exit('Senhas não conferem.');
+    }
+
+    // validação básica do e-mail
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        exit('Email inválido.');
+    }
+
+    // criar hash seguro
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
+    // prepared statement
+    $stmt = $conexao->prepare("INSERT INTO usuarios (nome, email, senha_hash) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $nome, $email, $senha_hash);
+
+    if ($stmt->execute()) {
+        header("Location: /login/index.html");
+        exit;
+    } else {
+        // tratar erro (ex: email duplicado)
+        echo "Erro: " . $stmt->error;
+    }
+    $stmt->close();
+}
+
 ?>
 
 <!DOCTYPE html>
