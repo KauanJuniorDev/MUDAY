@@ -1,3 +1,12 @@
+
+<?php
+session_start();
+if (empty($_SESSION['user_id'])) {
+    header("Location: /login/index.html");
+    exit;
+}
+?>
+
 <html lang="pt-BR">  
   <head>
     <meta charset="UTF-8">
@@ -39,8 +48,7 @@
         <button class="nao" type="button" tabindex="2">Não</button>
       </div>
    </div>
-
-      <script>
+      <script>        
         const navbar = document.querySelector('.navbar');
         const menuButton = document.querySelector('.menu-button');
 
@@ -53,22 +61,3 @@
     </div>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
