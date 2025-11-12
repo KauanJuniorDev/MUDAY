@@ -42,7 +42,7 @@ if (empty($_SESSION['user_id'])) {
         <button class="nao" type="button" tabindex="2" id="nao">Não</button>
         <p id="resposta"></p>
 
-        <script>
+        <!--<script>
         const simBtn = document.getElementById('sim');
         const naoBtn = document.getElementById('nao');
         const resp = document.getElementById('resposta');
@@ -58,7 +58,35 @@ if (empty($_SESSION['user_id'])) {
         const t = await r.text();
         resp.innerText = t;
         });
+        </script>-->
+
+        <script>
+        const simBtn = document.getElementById('sim');
+        const naoBtn = document.getElementById('nao');
+        const resposta = document.getElementById('resposta');
+        
+        simBtn.addEventListener('click', async () => {
+        const r = await fetch('action_sim.php');
+        const t = await r.text();
+        resposta.innerText = t;
+        });
+        
+        naoBtn.addEventListener('click', async () => {
+        const r = await fetch('consulta_tempo.php');
+        const data = await r.json();
+        
+        if (data.error === "not_logged") {
+        resposta.innerText = "Você precisa estar logado!";
+        } else {
+        resposta.innerHTML = `
+        <span class="tempo">
+        Você ficou <strong>${data.dias}</strong> dias e <strong>${data.horas}</strong> horas sem recair!
+        </span>
+        `;
+        }
+        });
         </script>
+          
       </div>
    </div>
       <script>        
@@ -73,4 +101,5 @@ if (empty($_SESSION['user_id'])) {
     </div>
   </body>
 </html>
+
 
