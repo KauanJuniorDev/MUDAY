@@ -2,7 +2,7 @@
 <?php
 session_start();
 if (empty($_SESSION['user_id'])) {
-    header("Location: /login/index.html");
+    header("Location: login/index.html");
     exit;
 }
 ?>
@@ -101,5 +101,6 @@ if (empty($_SESSION['user_id'])) {
     </div>
   </body>
 </html>
+
 
 
