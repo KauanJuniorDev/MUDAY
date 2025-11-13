@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->fetch()) {
         if (password_verify($senha, $hash)) {
             $_SESSION['user_id'] = $id;
-            header("Location: /index.php"); // ou home protegida
+            header("Location: ../index.php");
             exit;
         }
     }
