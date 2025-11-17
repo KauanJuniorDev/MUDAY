@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -5,7 +7,9 @@
 }
 body{
     font-family: Arial, sans-serif;
+    background-color: #0f0f1e;
 }
+
 
 nav {
     margin-left: auto;
@@ -92,7 +96,8 @@ nav ul li:hover{
 }
 
 h2{
-    color: rgb(0, 0, 0);
+font-family: 'Orbitron', sans-serif;
+    color: rgb(255, 255, 255);
     text-align: center;
     margin: 100px 0 15px;
     font-size: 35px;
@@ -116,35 +121,52 @@ h2{
     width: 100%;
     display: block;
 }
-.container p {
-    position: absolute;
-    top: 40%;
-    left: 64%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    color: rgb(0, 0, 0);
+p {
+ 
+   
+    border-radius: 10px 45px ;  
+    font-size: 25px;
+    color: rgb(255, 255, 255);
     font-weight: 600;
-    background: rgba(255,255,255,0.8);
-    padding: 10px 20px;
-    border-radius: 20px;
+    text-align: center;
+    margin-top: 220px;
+}
+
+.container2{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container3{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .resposta {
     position: absolute;
-    right: 47%;
     font-size: 20px;
-    top: 90%;
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 60%;
 }
 
 button {
-    padding: 20px 35px;
+    padding: 20px 45px;
     border-radius: 30px;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 247, 255, 0.568);
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     text-decoration: none;
     display: block;
@@ -153,13 +175,13 @@ button {
 }
 
 .sim{
-    background-color: #00d700;
+    background-color: #0f0f1e;
     color: white;
     margin-right: 10px;
 }
 
 .nao{
-    background-color: #d70000;
+    background-color: #0f0f1e;
     color: white;
     margin-left: 10px;
 }
@@ -200,8 +222,18 @@ button {
         gap: 1rem;
         padding: 1rem 0;
     }
+    
 
     /* Ajustes para evitar sobreposição em telas pequenas */
     .container { width: 90%; }
     .resposta { position: static; text-align: center; margin: 1.5rem 0; }
 }
+
+    .tempo {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #0061d7;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
