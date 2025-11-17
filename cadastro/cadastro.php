@@ -16,7 +16,7 @@
         $senha = $_POST['senha'];
         $confSenha = $_POST['confSenha'];
 
-        $result = mysqli_query($conexao, "INSSERT INTO usuarios(nome, email, senha, confirmaSenha) VALUES ('$nome', '$email', '$senha', '$confSenha')");
+        $result = mysqli_query($conexao, "INSSERT INTO usuarios(nome, email, senha, confSenha) VALUES ('$nome', '$email', '$senha', '$confSenha')");
         
     }
 
@@ -29,6 +29,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="cadastro.css">
     <title>Cadastre-se</title>
 </head>
@@ -41,8 +42,8 @@
 
             <nav>
                 <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/login/login.html">Login</a></li>  
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../login/login.html">Login</a></li>  
                 </ul>
             </nav>
 
@@ -75,7 +76,7 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="password" name="confirmaSenha" id="confirmaSenha" class="inputUser" required>
+                    <input type="password" name="confSenha" id="confirmaSenha" class="inputUser" required>
                     <label for="confSenha" class="labelInput">Confirme a senha:</label>
                 </div>
                 <br><br>
