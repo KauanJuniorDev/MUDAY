@@ -13,3 +13,4 @@ Escopo do Projeto:
 	tabindex (prioridade 2)
 	alt (prioridade 2)
 	tamanho da fonte (prioridade 2)
+Obs: Todos os membros deste projeto estão de acordo em apenas utilizar esta aplicação para fins educacionais, nenhuma das partes está autorizada em dar continuidade na aplicação e em sua utilização para benefícios próprios sem o consentimento pleno das outras partes envolvidas no desenvolvimento do projeto. 
