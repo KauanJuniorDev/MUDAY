@@ -95,7 +95,7 @@ nav ul li:hover{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 30%;
+    /*width: 30%;*/
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.6);
     border: 2px solid;

@@ -6,14 +6,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $stmt = $conexao->prepare("SELECT id, senha_hash FROM usuarios WHERE email = ?");
+    $stmt = $conexao->prepare("SELECT id, senha FROM usuarios WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->bind_result($id, $hash);
     if ($stmt->fetch()) {
         if (password_verify($senha, $hash)) {
             $_SESSION['user_id'] = $id;
-            header("Location: ../index.php");
+            header("Location: /index.php");
             exit;
         }
     }

@@ -1,15 +1,32 @@
 
 <?php
-session_start();
-if (empty($_SESSION['user_id'])) {
+
+  require_once "config.php"; // seu arquivo de conexão
+
+  session_start();
+  if (empty($_SESSION['user_id'])) {
     header("Location: login/index.html");
     exit;
-}
+  }
+
+  $id = $_SESSION['user_id'];
+
+  // BUSCA O NOME DO USUÁRIO NO BANCO
+  $sql = "SELECT nome FROM usuarios WHERE id = ? LIMIT 1";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("i", $id);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $user = $result->fetch_assoc();
+
+  $nome = $user['nome'];
+
 ?>
 
 <html lang="pt-BR">  
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MUDAY</title>
     <link rel="shortcut icon" href="img/caneta-calendario.png" type="image/x-icon">
@@ -29,9 +46,10 @@ if (empty($_SESSION['user_id'])) {
           <img src="img/menu.png" class="menu-button" alt="menu">
         </div>
       </div>
-    </div><h2>Bem vindo(a) ao Muday!</h2>
+    </div>
   </div>
-    <p>Olá "Nome",<br>mais um dia?</p>
+    <h2>Bem vindo(a) ao Muday!</h2>
+    <p>Olá, <?= $nome ?>! Você venceu <br><strong>mais um dia?</strong></p>
     <div class="container2">
       <div class="resposta" role="group" aria-label="Resposta">
           
