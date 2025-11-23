@@ -1,10 +1,6 @@
-
 <?php
-
-  require_once "config.php"; // seu arquivo de conexão
-
-  session_start();
-  if (empty($_SESSION['user_id'])) {
+session_start();
+if (empty($_SESSION['user_id'])) {
     header("Location: login/index.html");
     exit;
   }
@@ -38,8 +34,8 @@
         <h1 class="logo">MU<span>DAY</span></h1>
         <nav>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="/login/">Login</a></li>
+            <li><a href="index.php">Home</a></li>
+			<li><a href="login/index.html">Login</a></li>
           </ul>
         </nav>
         <div class="nav-icon-container">
@@ -48,8 +44,7 @@
       </div>
     </div>
   </div>
-    <h2>Bem vindo(a) ao Muday!</h2>
-    <p>Olá, <?= $nome ?>! Você venceu <br><strong>mais um dia?</strong></p>
+    <p>Olá "Nome",<br>mais um dia?</p>
     <div class="container2">
       <div class="resposta" role="group" aria-label="Resposta">
           
@@ -60,50 +55,38 @@
         <button class="nao" type="button" tabindex="2" id="nao">Não</button>
         <p id="resposta"></p>
 
-        <!--<script>
-        const simBtn = document.getElementById('sim');
-        const naoBtn = document.getElementById('nao');
-        const resp = document.getElementById('resposta');
-        
-        simBtn.addEventListener('click', async () => {
-        const r = await fetch('action_sim.php');
-        const t = await r.text();
-        resp.innerText = t;
-        });
+<script>
+    const simBtn = document.getElementById('sim');
+    const naoBtn = document.getElementById('nao');
+    const resposta = document.getElementById('resposta');
 
-        naoBtn.addEventListener('click', async () => {
-        const r = await fetch('consulta_tempo.php');
-        const t = await r.text();
-        resp.innerText = t;
-        });
-        </script>-->
-
-        <script>
-        const simBtn = document.getElementById('sim');
-        const naoBtn = document.getElementById('nao');
-        const resposta = document.getElementById('resposta');
-        
-        simBtn.addEventListener('click', async () => {
+    // BOTÃO "SIM"
+    simBtn.addEventListener('click', async () => {
         const r = await fetch('action_sim.php');
         const t = await r.text();
         resposta.innerText = t;
-        });
-        
-        naoBtn.addEventListener('click', async () => {
+    });
+
+    // BOTÃO "NÃO"
+    naoBtn.addEventListener('click', async () => {
         const r = await fetch('consulta_tempo.php');
         const data = await r.json();
-        
+
         if (data.error === "not_logged") {
-        resposta.innerText = "Você precisa estar logado!";
+            resposta.innerText = "Você precisa estar logado!";
         } else {
-        resposta.innerHTML = `
-        <span class="tempo">
-        Você ficou <strong>${data.dias}</strong> dias e <strong>${data.horas}</strong> horas sem recair!
-        </span>
-        `;
+            resposta.innerHTML = `
+                <span class="tempo">
+                    Você ficou 
+                    <strong>${data.dias}</strong>d 
+                    <strong>${data.horas}</strong>h 
+                    <strong>${data.minutos}</strong>m 
+                    <strong>${data.segundos}</strong>s sem recair!
+                </span>
+            `;
         }
-        });
-        </script>
+    });
+</script>
           
       </div>
    </div>
@@ -119,6 +102,3 @@
     </div>
   </body>
 </html>
-
-
-

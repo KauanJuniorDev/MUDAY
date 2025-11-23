@@ -20,7 +20,7 @@ $stmt->close();
 $agora = new DateTime();
 $permitido = false;
 
-if ($last_action) {
+if (!empty($last_action)) {
     $ultima = new DateTime($last_action);
     $diff = $agora->getTimestamp() - $ultima->getTimestamp();
     if ($diff >= 24 * 3600) {
