@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once('cadastro/config.php');
 if (empty($_SESSION['user_id'])) {
     header("Location: login/index.html");
     exit;
@@ -9,7 +10,7 @@ if (empty($_SESSION['user_id'])) {
 
   // BUSCA O NOME DO USUÁRIO NO BANCO
   $sql = "SELECT nome FROM usuarios WHERE id = ? LIMIT 1";
-  $stmt = $conn->prepare($sql);
+  $stmt = $conexao->prepare($sql);
   $stmt->bind_param("i", $id);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -44,7 +45,7 @@ if (empty($_SESSION['user_id'])) {
       </div>
     </div>
   </div>
-    <p>Olá "Nome",<br>mais um dia?</p>
+    <p>Olá <?= $nome ?>! <br>Você venceu <strong>mais um dia?</strong></p>
     <div class="container2">
       <div class="resposta" role="group" aria-label="Resposta">
           

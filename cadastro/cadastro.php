@@ -47,7 +47,7 @@ if(isset($_POST['submit'])) {
     $stmt->bind_param("sss", $nome, $email, $senha_hash);
 
     if ($stmt->execute()) {
-        header("Location: /login/index.html");
+        header("Location: ../login/index.html");
         exit;
     } else {
         // tratar erro (ex: email duplicado)
@@ -77,8 +77,7 @@ if(isset($_POST['submit'])) {
 
             <nav>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../login/login.html">Login</a></li>  
+                    <li><a href="../login/index.html">Home</a></li>  
                 </ul>
             </nav>
 
@@ -111,8 +110,8 @@ if(isset($_POST['submit'])) {
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="password" name="confSenha" id="confirmaSenha" class="inputUser" required>
-                    <label for="confSenha" class="labelInput">Confirme a senha:</label>
+                    <input type="password" name="confirmaSenha" id="confirmaSenha" class="inputUser" required>
+                    <label for="confirmaSenha" class="labelInput">Confirme a senha:</label>
                 </div>
                 <br><br>
                 <input type="submit" name="submit" id="submit">
