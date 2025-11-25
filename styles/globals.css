@@ -161,6 +161,14 @@ p {
     top: 60%;
 }
 
+.resposta-texto {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    min-height: 35px;
+}
+
 button {
     padding: 20px 45px;
     border-radius: 30px;
@@ -227,7 +235,7 @@ button {
     /* Ajustes para evitar sobreposição em telas pequenas */
     .container { width: 90%; }
     .resposta { position: static; text-align: center; margin: 1.5rem 0; }
-}
+
 
     .tempo {
         display: inline-block;
@@ -237,3 +245,4 @@ button {
         color: #0061d7;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
+}
